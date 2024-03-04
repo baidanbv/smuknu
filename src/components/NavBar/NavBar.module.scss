@@ -1,0 +1,74 @@
+@import '../../assets/scss/variables.scss';
+@import '../../assets/scss/mixins.scss';
+
+.NavBar {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  left: 0;
+  top: 100%;
+  background-color: $primary-text-color;
+  color: $white;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: right;
+  border-radius: 0px 0px 15px 16px;
+  padding-right: 25px;
+  padding-bottom: 30px;
+  transform: translateY(-20px);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+
+  @media screen and (min-width: $desktop) {
+    position: static;
+    margin-right: 40px;
+    visibility: visible;
+    color: $primary-text-color;
+    padding: 0;
+    background: none;
+    transform: translate(0);
+    opacity: 1;
+  }
+  ul {
+    @media screen and (min-width: $desktop) {
+      @include flex-ac-sb;
+      gap: 30px;
+      opacity: 1;
+    }
+    li {
+      padding: 15px 0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+      @include transition;
+
+      @media screen and (min-width: $desktop) {
+        padding: 0;
+        opacity: 1;
+        transform: translateY(0);
+        &:hover {
+          color: $primary-bg-color;
+          @include transition;
+        }
+      }
+    }
+  }
+}
+
+.activeLink {
+  color: $primary-bg-color;
+}
+.active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  ul {
+    li {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.3s;
+    }
+  }
+}

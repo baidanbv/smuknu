@@ -1,0 +1,50 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+.Header {
+  padding: 20px 0;
+  position: sticky;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  background: $white;
+  box-shadow: 0px 3px 6px #00000029;
+  .topHeader {
+    @include flex-ac-sb;
+    padding: 0 15px;
+    @media screen and (min-width: $tablet) {
+      padding: 0 30px;
+    }
+    .logo {
+      max-width: 150px;
+    }
+    .headerMenu {
+      @include flex-ac-sb;
+      gap: 15px;
+      .mobileMenu {
+        font-size: 29px;
+        color: $primary-bg-color;
+
+        @media screen and (min-width: $desktop) {
+          display: none;
+        }
+      }
+      .cart {
+        font-size: 34px;
+        color: #d9d9d9;
+
+        @media screen and (min-width: $desktop) {
+          order: 1;
+          cursor: pointer;
+          @include transition;
+          &:hover {
+            opacity: 0.7;
+            @include transition;
+          }
+        }
+      }
+      .cart.full {
+        color: $primary-bg-color;
+      }
+    }
+  }
+}
