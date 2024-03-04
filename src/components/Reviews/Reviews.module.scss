@@ -1,0 +1,15 @@
+@import '../../assets/scss/variables.scss';
+@import '../../assets/scss/mixins.scss';
+
+.Reviews {
+  padding-bottom: 55px;
+
+  @media screen and (min-width: $desktop) {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .reviewsList {
+    @include flex-col;
+    gap: 65px;
+  }
+}

@@ -1,0 +1,13 @@
+@import '../../assets/scss/mixins.scss';
+@import '../../assets/scss/variables.scss';
+
+.Products {
+  @include flex-col-ac;
+  gap: 45px;
+
+  @media screen and (min-width: $tablet) {
+    @include flex-row-c-fs;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
