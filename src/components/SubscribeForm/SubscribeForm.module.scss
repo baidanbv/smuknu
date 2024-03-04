@@ -1,0 +1,60 @@
+@import '../../assets/scss/variables.scss';
+@import '../../assets/scss/mixins.scss';
+
+.FormSection {
+  padding: 35px 0 45px;
+  .SubscribeForm {
+    @media screen and (min-width: $desktop) {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .formField {
+      margin-bottom: 20px;
+      label {
+        font-size: 20px;
+        line-height: 25px;
+        color: #707070;
+        margin-bottom: 5px;
+      }
+      input,
+      textarea {
+        width: 100%;
+        border: 1px solid #707070;
+        padding: 5px 10px;
+        outline: none;
+        &:focus {
+          border-color: $primary-bg-color;
+        }
+      }
+      textarea {
+        min-height: 220px;
+      }
+      .errorField {
+        color: #f00;
+        margin-top: 3px;
+      }
+    }
+    .btnWrapper {
+      @media screen and (min-width: $desktop) {
+        text-align: center;
+      }
+    }
+    .confirmSubscribe {
+      font-size: 16px;
+      font-weight: 700;
+      color: $white;
+      padding: 10px 45px;
+      background-color: $primary-bg-color;
+      border-radius: 20px;
+
+      @media screen and (min-width: $desktop) {
+        @include transition;
+        cursor: pointer;
+        &:hover {
+          @include transition;
+          background-color: lighten($primary-bg-color, 10%);
+        }
+      }
+    }
+  }
+}
