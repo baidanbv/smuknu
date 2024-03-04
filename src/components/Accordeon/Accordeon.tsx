@@ -36,7 +36,7 @@ const Accordeon = () => {
               <h3>{item.question}</h3>
             </div>
             <div className={selected === index ? `${styles.AccordeonContent} ${styles.show}` : styles.AccordeonContent}>
-              <div dangerouslySetInnerHTML={{ __html: item.answer }}></div>
+              <div>{item.answer}</div>
             </div>
           </div>
         ))}
