@@ -14,7 +14,6 @@ interface InitialFormValues {
 const SubscribeForm = () => {
   const [successPopup, setSuccessPopup] = useState(false);
   const [subscriberName, setSubscriberName] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
 
   const initialValues = {
     fullName: '',
@@ -23,7 +22,6 @@ const SubscribeForm = () => {
   };
 
   const handleSubmit = async (values: InitialFormValues, { setSubmitting }: FormikHelpers<InitialFormValues>) => {
-    setIsLoading(true);
     try {
       const subscriberData = {
         name: values.fullName,
@@ -36,7 +34,6 @@ const SubscribeForm = () => {
     } catch (error) {
       console.error('Error submitting form:', error);
     } finally {
-      setIsLoading(false);
       setSubmitting(false);
     }
   };
@@ -47,7 +44,7 @@ const SubscribeForm = () => {
         <div className="wrapper">
           <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={subscribeValidationSchema}>
             {({ isSubmitting }) => (
-              <Form className={styles.SubscribeForm} >
+              <Form className={styles.SubscribeForm}>
                 <div className={styles.formField}>
                   <label htmlFor="fullName">Full Name</label>
                   <Field type="text" name="fullName" id="name" />
@@ -67,8 +64,8 @@ const SubscribeForm = () => {
                 </div>
 
                 <div className={styles.btnWrapper}>
-                  <button type="submit" disabled={isSubmitting || isLoading} className={styles.confirmSubscribe}>
-                    {isLoading ? 'Loading...' : 'Submit'}
+                  <button type="submit" disabled={isSubmitting} className={styles.confirmSubscribe}>
+                    Opret
                   </button>
                 </div>
               </Form>

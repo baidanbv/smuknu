@@ -32,6 +32,8 @@
   }
   .footerContacts {
     @include flex-col-c;
+    max-width: 100px;
+    margin: 0 auto;
     font-size: 14px;
     text-align: center;
   }

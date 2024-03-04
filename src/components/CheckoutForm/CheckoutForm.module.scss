@@ -1,0 +1,94 @@
+@import '../../assets/scss/variables.scss';
+@import '../../assets/scss/mixins.scss';
+.CheckoutForm {
+  @include flex-w;
+  order: 1;
+  gap: 25px;
+  width: 100%;
+  padding-bottom: 30px;
+
+  @media screen and (min-width: $tablet) {
+    justify-content: space-between;
+    width: 65%;
+    order: -1;
+    border-bottom: 1px solid $primary-bg-color;
+  }
+  .formField {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @media screen and (min-width: $tablet) {
+      width: 46%;
+    }
+    label {
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    input {
+      border-radius: 8px;
+      background: #f6f6f6;
+      padding: 16px 20px;
+      color: $primary-text-color;
+      font-size: 14px;
+      outline: none;
+    }
+    .errorField {
+      color: #f00;
+      font-size: 12px;
+      margin-top: 3px;
+      padding-left: 20px;
+    }
+  }
+  .locationFields {
+    @include flex-sb;
+    width: 100%;
+    .formField {
+      width: 48%;
+    }
+  }
+  .btnWrapper {
+    width: 100%;
+    .confirmOrder {
+      @include transition;
+      padding: 16px 20px;
+      color: $white;
+      font-size: 18px;
+      background: $primary-bg-color;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 15px;
+      &:hover {
+        @include transition;
+        background-color: lighten($primary-bg-color, 10%);
+      }
+      &:disabled {
+        background: #ccc;
+      }
+    }
+  }
+  .errorContent {
+    color: #f00;
+    font-size: 16px;  
+  }
+}
+.successfullyCheckout {
+  p {
+    font-size: 30px;
+    font-weight: 600;
+    span {
+      color: $primary-bg-color;
+    }
+  }
+  .backToShop {
+    display: flex;
+    margin-top: 30px;
+    font-size: 22px;
+    a {
+      color: $primary-bg-color;
+      margin: 0 5px;
+      font-weight: 500;
+    }
+  }
+}

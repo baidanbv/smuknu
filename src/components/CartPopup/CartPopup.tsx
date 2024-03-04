@@ -2,6 +2,9 @@ import { MdKeyboardArrowUp, MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import { FaRegTrashAlt } from 'react-icons/fa';
 import { CartPopupProps } from '../../interfaces/ComponentsInterfaces';
 
+import Button from './../Button/Button';
+import { NavLink } from 'react-router-dom';
+
 import styles from './CartPopup.module.scss';
 
 const CartPopup = ({ productsInCart, closeHandler, amountIncrease, amountDecrease, removeFromCart }: CartPopupProps) => {
@@ -55,6 +58,11 @@ const CartPopup = ({ productsInCart, closeHandler, amountIncrease, amountDecreas
             <div className={styles.totalPrice}>
               <p className={styles.totalText}>I alt</p>
               <span>{totalPrice},00 kr.</span>
+            </div>
+            <div className={styles.toCheckout}>
+              <NavLink to='/checkout'>
+                <Button btnTitle="Til Betaling" />
+              </NavLink>
             </div>
           </>
         )}
