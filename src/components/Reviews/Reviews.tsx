@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import Title from './../Title/Title';
+import Title, { TitlePartPosition } from './../Title/Title';
 import SingleReview from './SingleReview/SingleReview';
 import { Review } from '../../interfaces/ComponentsInterfaces';
 
@@ -24,7 +24,7 @@ const Reviews = () => {
 
   return (
     <section className={styles.Reviews} data-testid="Reviews">
-      <Title partOne="SKØNHEDER " partTwo="UDTALER" partPosition={'first'} />
+      <Title partOne="SKØNHEDER " partTwo="UDTALER" partPosition={TitlePartPosition.First} />
       <div className={`wrapper ${styles.reviewsList}`}>
         {reviews.map((review) => {
           return <SingleReview key={review._id} review={review} />;
