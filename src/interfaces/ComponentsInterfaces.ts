@@ -1,3 +1,4 @@
+import { Product } from "./Product";
 
 export interface Review {
   _id: string;
@@ -20,3 +21,10 @@ export interface PagePreviewData {
   btnTitle?: string;
 }
 
+export interface CartPopupProps {
+  productsInCart: Product[];
+  closeHandler: () => void;
+  amountIncrease: (product: Product) => void;
+  amountDecrease: (product: Product) => void;
+  removeFromCart: (product: Product) => void;
+}

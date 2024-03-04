@@ -3,10 +3,10 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { LayoutPageProps } from '../../interfaces/LayoutPageProps';
 
-const LayOutPage = ({ toggleMenu, isOpenMenu }: LayoutPageProps) => {
+const LayOutPage = ({ handleCart, isEmptyCart, toggleMenu, isOpenMenu }: LayoutPageProps) => {
   return (
     <>
-      <Header toggleMenu={toggleMenu} isOpenMenu={isOpenMenu} />
+      <Header handleCart={handleCart} isEmptyCart={isEmptyCart} toggleMenu={toggleMenu} isOpenMenu={isOpenMenu} />
       <main>
         <Outlet />
       </main>
