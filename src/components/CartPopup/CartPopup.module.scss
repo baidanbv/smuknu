@@ -1,0 +1,196 @@
+@import '../../assets/scss/variables.scss';
+@import '../../assets/scss/mixins.scss';
+
+.CartPopupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  animation: popupOverlay 0.5s;
+  .popup {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    width: 100%;
+    max-width: 730px;
+    max-height: 500px;
+    background-color: $white;
+    overflow: hidden;
+    padding-bottom: 25px;
+    animation: popup 0.5s ease-in-out;
+    overflow-y: scroll;
+    h4 {
+      padding: 30px 0;
+      text-align: center;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 400;
+
+      @media screen and (min-width: $tablet) {
+        padding: 60px 0;
+      }
+    }
+    .product {
+      position: relative;
+      @include flex-ac-sb;
+      padding: 30px;
+      width: 100%;
+      border-bottom: 1px solid $primary-bg-color;
+      .productData {
+        @include flex-sb;
+        align-items: flex-start;
+        gap: 30px;
+        img {
+          width: 90px;
+          height: 90px;
+          border-radius: 15px;
+        }
+        .productName {
+          font-size: 16px;
+          line-height: 20px;
+          font-weight: 400;
+
+          @media screen and (min-width: $tablet) {
+            font-size: 20px;
+            line-height: 25px;
+          }
+
+          @media screen and (min-width: $desktop) {
+            @include transition;
+            &:hover {
+              cursor: pointer;
+              color: $primary-bg-color;
+              @include transition;
+            }
+          }
+        }
+      }
+      .productPrice {
+        @include flex-ac-sb;
+        position: absolute;
+        right: 15px;
+        bottom: 5px;
+        flex-direction: row;
+        height: auto;
+        text-align: right;
+        width: 50%;
+
+        @media screen and (min-width: $tablet) {
+          position: static;
+          @include flex-col;
+          justify-content: space-between;
+          height: 80px;
+          width: 20%;
+        }
+        .price {
+          width: 100%;
+          font-size: 19px;
+          line-height: 24px;
+          font-weight: 700;
+        }
+        .counterProduct {
+          @include flex-ac-sb;
+          gap: 2px;
+          height: 42px;
+          display: flex;
+          align-items: center;
+
+          @media screen and (min-width: $tablet) {
+            align-self: flex-end;
+          }
+          .amount {
+            min-width: 30px;
+            display: block;
+            font-weight: bold;
+          }
+
+          .changeAmount {
+            @include flex-col;
+            .countCart {
+              cursor: pointer;
+              color: $primary-text-color;
+              transition: 0.3s all ease-in-out;
+              &:hover {
+                color: $primary-bg-color;
+                transition: 0.3s all ease-in-out;
+              }
+            }
+          }
+        }
+      }
+      .removeProduct {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        cursor: pointer;
+        color: $primary-text-color;
+        transition: 0.3s all ease-in-out;
+
+        @media screen and (min-width: $tablet) {
+          top: auto;
+          bottom: 5px;
+          right: 30px;
+          &:hover {
+            color: $primary-bg-color;
+            transition: 0.3s all ease-in-out;
+          }
+        }
+      }
+    }
+    .totalPrice {
+      @include flex-ac-sb;
+      padding: 15px 30px 0;
+      width: 100%;
+      .totalText {
+        font-size: 20px;
+        line-height: 25px;
+      }
+      span {
+        font-weight: 700;
+        font-size: 19px;
+        line-height: 24px;
+      }
+    }
+  }
+}
+
+@keyframes popup {
+  0% {
+    transform: translateY(-100%) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%) scale(1);
+    opacity: 1;
+  }
+}
+@keyframes popupOverlay {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.popup::-webkit-scrollbar {
+  width: 12px;
+}
+
+.popup::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 6px;
+}
+
+.popup::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+.popup::-webkit-scrollbar-thumb:hover {
+  background-color: $primary-bg-color;
+}

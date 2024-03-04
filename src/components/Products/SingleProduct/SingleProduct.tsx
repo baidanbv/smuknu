@@ -3,9 +3,10 @@ import styles from './SingleProduct.module.scss';
 
 interface SingleProductProps {
   product: Product;
+  addToCart: (product: Product) => void;
 }
 
-const SingleProduct = ({ product}: SingleProductProps) => {
+const SingleProduct = ({ product, addToCart }: SingleProductProps) => {
   return (
     <div className={styles.SingleProduct} data-testid="SingleProduct">
       <div className={styles.productImage}>
@@ -21,6 +22,14 @@ const SingleProduct = ({ product}: SingleProductProps) => {
         <h3 className={styles.productTitle}>{product.title}</h3>
         <div className={styles.productPrice}>
           {product.price},00 kr.
+          <button
+            className={styles.addToCart}
+            onClick={() => {
+              addToCart(product);
+            }}
+          >
+            KØB
+          </button>
         </div>
       </div>
     </div>
