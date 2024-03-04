@@ -1,0 +1,24 @@
+@import '../../assets/scss/variables';
+
+.Title {
+  font-size: 54px;
+  line-height: 62px;
+  text-align: center;
+  margin: 0 auto;
+  color: $primary-text-color;
+  margin-bottom: 45px;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 64px;
+    line-height: 80px;
+  }
+  span {
+    display: block;
+  }
+  span.last {
+    color: $primary-bg-color;
+  }
+  span.first {
+    color: $primary-bg-color;
+  }
+}

@@ -1,0 +1,40 @@
+@import '../../assets/scss/variables.scss';
+
+.PagePreviewSection {
+  padding: 100px 0;
+  @media screen and (min-width: $tablet) {
+    padding: 105px 0 240px;
+  }
+  .contentBlock {
+    width: 100%;
+    text-align: center;
+    padding: 45px 0 60px;
+
+    @media screen and (min-width: $tablet) {
+      max-width: 670px;
+    }
+    @media screen and (min-width: $desktop) {
+      max-width: 70%;
+    }
+    .contentTitle {
+      max-width: 305px;
+      font-size: 54px;
+      margin: 0 auto 15px;
+      line-height: 68px;
+
+      @media screen and (min-width: $tablet) {
+        max-width: 62%;
+        font-size: 64px;
+        line-height: 80px;
+      }
+      @media screen and (min-width: $desktop) {
+      max-width: 40%;
+    }
+    }
+    .contentSubtitle {
+      max-width: 305px;
+      font-size: 18px;
+      margin: 0 auto 25px;
+    }
+  }
+}

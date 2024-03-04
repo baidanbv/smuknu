@@ -1,0 +1,26 @@
+@import '../../assets/scss/variables.scss';
+@import '../../assets/scss/mixins.scss';
+.Button {
+  width: 320px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  background-color: $primary-bg-color;
+  border: 1px solid transparent;
+  padding: 20px 0;
+  border-radius: 30px;
+
+  @media screen and (min-width: $tablet) {
+    width: 90%;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 50%;
+    @include transition;
+    cursor: pointer;
+    &:hover {
+      @include transition;
+      background-color: lighten($primary-bg-color, 10%);
+    }
+  }
+}

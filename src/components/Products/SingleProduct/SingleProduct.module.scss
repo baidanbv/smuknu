@@ -1,0 +1,85 @@
+@import '../../../assets/scss/variables.scss';
+@import '../../../assets/scss/mixins.scss';
+
+.SingleProduct {
+  width: 320px;
+  border-radius: 15px;
+  box-shadow: 0px 3px 6px #00000029;
+  overflow: hidden;
+
+  @media screen and (min-width: $tablet) {
+    width: 46%;
+    max-width: 320px;
+    min-height: 440px;
+  }
+  @media screen and (min-width: $desktop) {
+    @include transition;
+    &:hover {
+      @include transition;
+      cursor: pointer;
+      box-shadow: 0px 3px 6px $primary-bg-color;
+    }
+  }
+  .productImage {
+    position: relative;
+    height: 320px;
+    width: 320px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .productDiscount {
+      position: absolute;
+      border-radius: 15px;
+      bottom: 15px;
+      right: 15px;
+      background-color: $primary-bg-color;
+      padding: 8px 30px;
+      color: $white;
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      span {
+        display: block;
+        font-size: 22px;
+      }
+    }
+  }
+  .productData {
+    @include flex-col;
+    justify-content: space-between;
+    height: 130px;
+    padding: 15px 10px 18px;
+    .productTitle {
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 28px;
+      margin-bottom: 7px;
+    }
+    .productPrice {
+      @include flex-ac-sb;
+      width: 100%;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 23px;
+      .addToCart {
+        border-radius: 20px;
+        color: $white;
+        background-color: $primary-text-color;
+        font-size: 18px;
+        line-height: 23px;
+        padding: 5px 30px;
+        @include transition;
+
+        @media screen and (min-width: $desktop) {
+          &:hover {
+            cursor: pointer;
+            @include transition;
+            background-color: $primary-bg-color;
+          }
+        }
+      }
+    }
+  }
+}
