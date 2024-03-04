@@ -1,0 +1,67 @@
+@import '../../assets/scss/mixins.scss';
+@import '../../assets/scss/variables.scss';
+.Accordeon {
+  padding: 45px 0;
+
+  @media screen and (min-width: $tablet) {
+    padding: 90px 0 60px;
+  }
+  .AccordeonWrapper {
+    .AccordeonItem {
+      padding: 15px 0;
+      border-bottom: 1px solid $primary-bg-color;
+      &:first-child {
+        border-top: 1px solid $primary-bg-color;
+      }
+
+      @media screen and (min-width: $tablet) {
+        padding: 30px 0;
+      }
+      .AccordeonTitle {
+        @include flex-ac;
+        font-size: 16px;
+
+        @media screen and (min-width: $tablet) {
+          font-size: 18px;
+          gap: 15px;
+        }
+        @media screen and (min-width: $desktop) {
+          cursor: pointer;
+          @include transition;
+          &:hover {
+            color: $primary-bg-color;
+            @include transition;
+            .titleIcon {
+              color: $primary-bg-color;
+            }
+          }
+        }
+        .titleIcon {
+          font-size: 44px;
+          color: #d9d9d9;
+          @include transition;
+        }
+        .titleIcon.titleIconActive {
+          font-size: 44px;
+          color: $primary-bg-color;
+          @include transition;
+        }
+      }
+      .AccordeonContent {
+        margin-left: 44px;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+
+        @media screen and (min-width: $tablet) {
+          margin-left: 60px;
+        }
+      }
+      .AccordeonContent.show {
+        height: auto;
+        max-height: 500px;
+        transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+      }
+    }
+  }
+}
