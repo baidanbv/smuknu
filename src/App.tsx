@@ -10,6 +10,7 @@ import Home from './pages/Home/Home';
 import CartPopup from './components/CartPopup/CartPopup';
 import { Product } from './interfaces/Product';
 import { scrollToTop } from './helpers/scrollToTop';
+import Checkout from './pages/Checkout/Checkout';
 
 const App = () => {
   const productsInCartString = localStorage.getItem('productsInCart');
@@ -71,6 +72,10 @@ const App = () => {
     });
   };
 
+  const clearCart = () => {
+    setCartsProducts([]);
+  }
+
   const handleCart = () => {
     setIsOpenCart(!isOpenCart);
     setIsOpenMenu(false);
@@ -92,6 +97,7 @@ const App = () => {
 
   useEffect(() => {
     setIsOpenMenu(false);
+    setIsOpenCart(false);
     scrollToTop();
   }, [location.pathname]);
 
@@ -113,6 +119,7 @@ const App = () => {
           <Route path="shop" element={<Shop addToCart={addToCart} />} />
           <Route path="be-member" element={<BeMember />} />
           <Route path="sundhed" element={<Health />} />
+          <Route path="checkout" element={<Checkout productsInCart={cartsProducts} clearCart={clearCart} />} />
           <Route path="*" element={<h1>Not Found</h1>} />
         </Route>
       </Routes>

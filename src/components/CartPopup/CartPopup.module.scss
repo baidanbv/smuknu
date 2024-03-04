@@ -157,6 +157,19 @@
       }
     }
   }
+  .toCheckout {
+    width: 100%;
+    margin: 30px 0 0;
+    text-align: center;
+    @media screen and (min-width: $tablet){
+      margin-left: 30px;
+      width: 30%;  
+      text-align: left;
+    }
+    @media screen and (min-width: $desktop){
+      width: 60%;  
+    }
+    }
 }
 
 @keyframes popup {
