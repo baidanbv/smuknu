@@ -60,7 +60,7 @@ const CartPopup = ({ productsInCart, closeHandler, amountIncrease, amountDecreas
               <span>{totalPrice},00 kr.</span>
             </div>
             <div className={styles.toCheckout}>
-              <NavLink to='checkout'>
+              <NavLink to='/smuknu/checkout'>
                 <Button btnTitle="Til Betaling" />
               </NavLink>
             </div>
