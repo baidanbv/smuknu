@@ -1,30 +1,41 @@
-# React + TypeScript + Vite
+# Smuknu
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+Smuknu is a web application project aimed at managing shopping carts and facilitating order placements. It's built using React, TypeScript, and various other technologies to ensure a smooth user experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
 
-## Expanding the ESLint configuration
+- React
+- TypeScript
+- Axios
+- generate-react-cli
+- Formik (with Yup for validation)
+- react-icons
+- react-number-format
+- react-router-Development
+- sass
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Additional Features
 
-- Configure the top-level `parserOptions` property like this:
+- Git/GitHub version control management
+- GitHub Actions set up for continuous integration
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Implementation Details
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- **Component Generation**: The `generate-react-cli` library was utilized for rapid component generation.
+- **Form Handling**: Forms were created using the `Formik` library paired with `Yup` for validation.
+- **Icon Integration**: All icons were sourced from the `react-icons` library.
+- **API Interaction**: `Axios` was used for efficient communication with APIs.
+- **Code Optimization**: Custom hooks were developed for fetching data from APIs, along with separate folder structures for form validation, interfaces, and utility functions.
+
+## Functionality
+
+- Users can add, remove, and adjust quantities of items in their shopping cart.
+- An order form collects user data and sends it to the specified API.
+
+## Getting Started
+
+1. Clone the repository.
+2. Install dependencies using `npm install`.
+3. Start the development server using `npm dev`.
