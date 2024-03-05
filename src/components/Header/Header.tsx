@@ -14,7 +14,7 @@ const Header = ({ handleCart, isEmptyCart, toggleMenu, isOpenMenu }: LayoutPageP
       <header className={styles.Header} data-testid="Header">
         <div className={`wrapper ${styles.topHeader}`}>
           <div className={styles.logo}>
-            <NavLink to="/" className={styles.logo}>
+            <NavLink to="/smuknu" className={styles.logo}>
               <img src={logo} alt="Smuknu logotype" />
             </NavLink>
           </div>
