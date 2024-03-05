@@ -1,4 +1,4 @@
-import {  useState } from 'react';
+import { useState } from 'react';
 import { FaQuestion } from 'react-icons/fa';
 
 import styles from './Accordeon.module.scss';
@@ -19,12 +19,12 @@ const Accordeon = () => {
     return <div>Loading...</div>;
   }
 
-  const toggle = (i:number) => {
+  const toggle = (i: number) => {
     if (selected === i) {
       return setSelected(null);
     }
     setSelected(i);
-  }
+  };
 
   return (
     <section className={styles.Accordeon} data-testid="Accordeon">
@@ -36,7 +36,7 @@ const Accordeon = () => {
               <h3>{item.question}</h3>
             </div>
             <div className={selected === index ? `${styles.AccordeonContent} ${styles.show}` : styles.AccordeonContent}>
-              <div>{item.answer}</div>
+              <div dangerouslySetInnerHTML={{ __html: item.answer }}></div>
             </div>
           </div>
         ))}
