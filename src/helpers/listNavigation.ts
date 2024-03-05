@@ -7,7 +7,7 @@ export const listNavigation: NavigationItem[] = [
   {
     id: 1,
     navName: 'FORSIDEN',
-    url: '/'
+    url: '/smuknu'
   },
   {
     id: 2,

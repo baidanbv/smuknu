@@ -18,7 +18,7 @@ const SuccessPopup = ({ subscriberName }: SuccessPopup) => (
       <img src={successImage} alt="Success" />
     </div>
     <p className={styles.subtitle}>Kig I din inbox vi har sendt en lille velkomst gave.</p>
-    <NavLink to="/" className={styles.wrapperButton}>
+    <NavLink to="/smuknu" className={styles.wrapperButton}>
       <Button btnTitle="Til Forsiden" />
     </NavLink>
   </div>

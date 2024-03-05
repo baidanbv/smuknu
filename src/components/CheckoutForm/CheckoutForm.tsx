@@ -118,7 +118,7 @@ const CheckoutForm = ({ orders, clearCart }: CheckoutFormProps) => {
           </p>
           <div className={styles.backToShop}>
             Du kan vende tilbage til
-            <Link to="/">Forsiden</Link>
+            <Link to="/smuknu">Forsiden</Link>
           </div>
         </div>
       )}
