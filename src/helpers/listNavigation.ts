@@ -12,16 +12,16 @@ export const listNavigation: NavigationItem[] = [
   {
     id: 2,
     navName: 'VORES PRODUKTER',
-    url: '/shop'
+    url: 'shop'
   },
   {
     id: 3,
     navName: 'SPØRG OM SUNDHED',
-    url: '/sundhed'
+    url: 'sundhed'
   },
   {
     id: 4,
     navName: 'BLIV MEDLEM',
-    url: '/be-member'
+    url: 'be-member'
   }
 ];
