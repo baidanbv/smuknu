@@ -23,7 +23,7 @@ const Reviews = () => {
   }, []);
 
   return (
-    <section className={styles.Reviews} data-testid="Reviews">
+    <section className={styles.Reviews}>
       <Title partOne="SKØNHEDER " partTwo="UDTALER" partPosition={TitlePartPosition.First} />
       <div className={`wrapper ${styles.reviewsList}`}>
         {reviews.map((review) => {

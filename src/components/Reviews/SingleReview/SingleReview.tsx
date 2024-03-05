@@ -6,7 +6,7 @@ interface SingleReviewProps {
 }
 
 const SingleReview = ({ review }: SingleReviewProps) => (
-  <div className={styles.SingleReview} data-testid="SingleReview">
+  <div className={styles.SingleReview}>
     <div className={styles.reviewAvatar}>
       <img src={review.image} alt={review.name} />
     </div>

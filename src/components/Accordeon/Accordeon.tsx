@@ -27,7 +27,7 @@ const Accordeon = () => {
   };
 
   return (
-    <section className={styles.Accordeon} data-testid="Accordeon">
+    <section className={styles.Accordeon}>
       <div className={`wrapper ${styles.AccordeonWrapper}`}>
         {questions.map((item, index) => (
           <div key={index} className={styles.AccordeonItem}>

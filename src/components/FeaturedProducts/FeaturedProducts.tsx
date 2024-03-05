@@ -19,7 +19,7 @@ const FeaturedProducts = ({ addToCart }: ProductPageProps) => {
   }
 
   return (
-    <section className={styles.FeaturedBeauty} data-testid="FeaturedBeauty" id="featuredProducts">
+    <section className={styles.FeaturedBeauty} id="featuredProducts">
       <Title partOne="UDVALGT" partTwo="SKØNHED" partPosition={TitlePartPosition.Last} />
       <div className={`wrapper ${styles.featuredProducts}`}>
         <Products products={featuredProducts} addToCart={addToCart} />

@@ -22,11 +22,11 @@ const BeMemberComponent = () => {
 
   return (
     <section className={styles.BeMemberComponent}>
-      <div className={`wrapper ${styles.container}`} data-testid="BeMemberComponent">
+      <div className={`wrapper ${styles.container}`}>
         <div className={styles.beMemberBlock}>
           <h3>MEDLEM?</h3>
           <p>Vær med i kundeklubben for nye videoer, rabatkoder og mere!</p>
-          <NavLink to="/be-member">{windowWidth >= 728 ? <Button btnTitle="Bliv medlem" /> : <Button btnTitle="Bliv medlem af kundeklubben" />}</NavLink>
+          <NavLink to="/smuknu/be-member">{windowWidth >= 728 ? <Button btnTitle="Bliv medlem" /> : <Button btnTitle="Bliv medlem af kundeklubben" />}</NavLink>
         </div>
         {windowWidth >= 728 && (
           <div className={styles.ourMembers}>

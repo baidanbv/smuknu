@@ -14,7 +14,7 @@ interface TitleProps {
 
 const Title = ({ partOne, partTwo, partPosition }: TitleProps) => {
   return (
-    <h2 className={styles.Title} data-testid="Title">
+    <h2 className={styles.Title}>
       <span className={`${partPosition === TitlePartPosition.First ? styles.first : ''}`}>{partOne}</span>
       <span className={`${partPosition === TitlePartPosition.Last ? styles.last : ''}`}>{partTwo}</span>
     </h2>

@@ -9,7 +9,7 @@ interface ProductsProps {
 
 const Products = ({ products, addToCart }: ProductsProps) => {
   return (
-    <div className={`wrapper ${styles.Products}`} data-testid="Products">
+    <div className={`wrapper ${styles.Products}`}>
       {products.map((product) => {
         return <SingleProduct key={product._id} product={product} addToCart={addToCart} />;
       })}

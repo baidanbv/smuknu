@@ -11,7 +11,7 @@ import styles from './Header.module.scss';
 const Header = ({ handleCart, isEmptyCart, toggleMenu, isOpenMenu }: LayoutPageProps) => {
   return (
     <>
-      <header className={styles.Header} data-testid="Header">
+      <header className={styles.Header}>
         <div className={`wrapper ${styles.topHeader}`}>
           <div className={styles.logo}>
             <NavLink to="/smuknu" className={styles.logo}>

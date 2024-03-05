@@ -10,7 +10,7 @@ interface SuccessPopup {
 }
 
 const SuccessPopup = ({ subscriberName }: SuccessPopup) => (
-  <div className={styles.SuccessPopup} data-testid="SuccessPopup">
+  <div className={styles.SuccessPopup}>
     <h3>TAK!</h3>
     <p className={styles.subscriberName}>{subscriberName}</p>
     <p className={styles.subtitle}>Vi er enormt glade for at få dig som medlem.</p>

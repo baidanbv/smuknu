@@ -8,7 +8,7 @@ interface ButtonProps {
 
 const Button = ({ btnTitle }: ButtonProps) => {
   return (
-    <button className={styles.Button} data-testid="Button">
+    <button className={styles.Button}>
       {btnTitle}
     </button>
   );

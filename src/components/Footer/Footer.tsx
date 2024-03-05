@@ -2,7 +2,7 @@ import { FaFacebook, FaInstagram, FaPinterest, FaTwitter, FaYoutube } from 'reac
 import styles from './Footer.module.scss';
 
 const Footer = () => (
-  <div className={styles.Footer} data-testid="Footer">
+  <div className={styles.Footer}>
     <div className="wrapper">
       <div className={styles.socialLinks}>
         <a className={styles.icon} href="http://facebook.com">

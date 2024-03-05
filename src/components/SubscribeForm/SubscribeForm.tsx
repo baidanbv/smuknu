@@ -40,7 +40,7 @@ const SubscribeForm = () => {
 
   return (
     <>
-      <section className={styles.FormSection} data-testid="SubscribeForm">
+      <section className={styles.FormSection}>
         <div className="wrapper">
           <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={subscribeValidationSchema}>
             {({ isSubmitting }) => (

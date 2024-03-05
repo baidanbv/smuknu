@@ -5,7 +5,7 @@ import styles from './PagePreviewSection.module.scss';
 
 const PagePreviewSection = ( data : PagePreviewData) => {
   return (
-    <section className={styles.PagePreviewSection} data-testid="PagePreviewSection" style={{ background: `url(../../${data.bgSection}) no-repeat center / cover` }}>
+    <section className={styles.PagePreviewSection} style={{ background: `url(../../${data.bgSection}) no-repeat center / cover` }}>
       <div className={`wrapper ${styles.contentBlock}`} style={{ backgroundColor: data.contentBlockBgColor }}>
         <h1 className={styles.contentTitle} style={{ color: data.titleColor }}>
           {data.contentTitle}

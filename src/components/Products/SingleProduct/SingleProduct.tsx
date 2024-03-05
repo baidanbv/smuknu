@@ -8,7 +8,7 @@ interface SingleProductProps {
 
 const SingleProduct = ({ product, addToCart }: SingleProductProps) => {
   return (
-    <div className={styles.SingleProduct} data-testid="SingleProduct">
+    <div className={styles.SingleProduct}>
       <div className={styles.productImage}>
         <img src={product.image} alt={product.title} />
         {product.discountInPercent > 0 && (
