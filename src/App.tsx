@@ -114,7 +114,7 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<LayOutPage handleCart={handleCart} isEmptyCart={isEmptyCart} toggleMenu={toggleMenu} isOpenMenu={isOpenMenu} />}>
+        <Route path="/smuknu" element={<LayOutPage handleCart={handleCart} isEmptyCart={isEmptyCart} toggleMenu={toggleMenu} isOpenMenu={isOpenMenu} />}>
           <Route index element={<Home addToCart={addToCart} />} />
           <Route path="shop" element={<Shop addToCart={addToCart} />} />
           <Route path="be-member" element={<BeMember />} />
