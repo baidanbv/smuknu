@@ -7,7 +7,7 @@ import { Product } from '../../interfaces/Product';
 import styles from './FeaturedProducts.module.scss';
 import useDataFetching from '../../hooks/useFetchData';
 
-const FeaturedProducts = ({ addToCart }: ProductPageProps) => {
+const FeaturedProducts = ({ addToCart, cartsProducts, handleCart }: ProductPageProps) => {
   const { data: products } = useDataFetching<Product[]>('https://smuknu.webmcdm.dk/products');
 
   let featuredProducts: Product[] = [];
@@ -22,7 +22,7 @@ const FeaturedProducts = ({ addToCart }: ProductPageProps) => {
     <section className={styles.FeaturedBeauty} id="featuredProducts">
       <Title partOne="UDVALGT" partTwo="SKØNHED" partPosition={TitlePartPosition.Last} />
       <div className={`wrapper ${styles.featuredProducts}`}>
-        <Products products={featuredProducts} addToCart={addToCart} />
+        <Products products={featuredProducts} addToCart={addToCart} cartsProducts={cartsProducts} handleCart={handleCart} />
       </div>
     </section>
   );

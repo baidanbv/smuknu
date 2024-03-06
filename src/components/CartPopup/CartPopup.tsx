@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 
 import styles from './CartPopup.module.scss';
 
-const CartPopup = ({ productsInCart, closeHandler, amountIncrease, amountDecrease, removeFromCart }: CartPopupProps) => {
+const CartPopup = ({ cartsProducts, closeHandler, amountIncrease, amountDecrease, removeFromCart }: CartPopupProps) => {
   const closeModalOutSide = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const target = e.target as HTMLDivElement;
     if (target.id === 'overlayPopup') {
@@ -15,7 +15,7 @@ const CartPopup = ({ productsInCart, closeHandler, amountIncrease, amountDecreas
     }
   };
 
-  const totalPrice: number = productsInCart.reduce((acc, product) => {
+  const totalPrice: number = cartsProducts.reduce((acc, product) => {
     if (product.amount !== undefined) {
       return acc + product.price * product.amount;
     } else {
@@ -26,11 +26,11 @@ const CartPopup = ({ productsInCart, closeHandler, amountIncrease, amountDecreas
   return (
     <div id="overlayPopup" className={styles.CartPopupOverlay} onClick={closeModalOutSide}>
       <div className={styles.popup}>
-        {!productsInCart.length ? (
+        {!cartsProducts.length ? (
           <h4>Der er ingen produkter I kurven</h4>
         ) : (
           <>
-            {productsInCart.map((product) => {
+            {cartsProducts.map((product) => {
               return (
                 <div key={product._id} className={styles.product}>
                   <div className={styles.productData}>
@@ -60,7 +60,7 @@ const CartPopup = ({ productsInCart, closeHandler, amountIncrease, amountDecreas
               <span>{totalPrice},00 kr.</span>
             </div>
             <div className={styles.toCheckout}>
-              <NavLink to='/smuknu/checkout'>
+              <NavLink to="/smuknu/checkout">
                 <Button btnTitle="Til Betaling" />
               </NavLink>
             </div>

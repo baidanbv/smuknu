@@ -8,7 +8,7 @@ import bgSection from '../../assets/img/headers/abouthealth.jpg';
 import styles from './Checkout.module.scss';
 
 interface CheckoutProps {
-  productsInCart: Product[];
+  cartsProducts: Product[];
   clearCart: () => void;
 }
 
@@ -21,17 +21,17 @@ const data: PagePreviewData = {
   contentColor: '#000'
 };
 
-const Checkout = ({ productsInCart, clearCart }: CheckoutProps) => {
-  const totalPrice = productsInCart?.map((product) => product.amount! * product.price).reduce((acc, currentValue) => acc + currentValue, 0);
+const Checkout = ({ cartsProducts, clearCart }: CheckoutProps) => {
+  const totalPrice = cartsProducts?.map((product) => product.amount! * product.price).reduce((acc, currentValue) => acc + currentValue, 0);
 
-  const orders: Order[] = productsInCart.map((product) => {
+  const orders: Order[] = cartsProducts.map((product) => {
     return {
       _id: product._id,
       amount: product.amount!
     };
   });
   
-  const orderSummary = productsInCart?.map((product) => {
+  const orderSummary = cartsProducts?.map((product) => {
     return (
       <div className={styles.itemProduct} key={product._id}>
         <div className={styles.productData}>

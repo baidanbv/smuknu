@@ -12,8 +12,9 @@ import { PagePreviewData } from '../../interfaces/ComponentsInterfaces';
 
 import styles from './Shop.module.scss';
 
-const Shop = ({ addToCart }: ProductPageProps) => {
+const Shop = ({ addToCart, cartsProducts, handleCart }: ProductPageProps) => {
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -40,7 +41,7 @@ const Shop = ({ addToCart }: ProductPageProps) => {
       <PagePreviewSection {...data} />
       <section className={styles.shopProducts}>
         <Title partOne="ALT ER" partTwo="SKØNHED" partPosition={TitlePartPosition.Last} />
-        <Products products={products} addToCart={addToCart} />
+        <Products products={products} addToCart={addToCart} cartsProducts={cartsProducts} handleCart={handleCart} />
       </section>
       <BeMemberComponent />
     </>

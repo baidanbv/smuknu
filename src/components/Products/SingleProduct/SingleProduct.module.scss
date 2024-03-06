@@ -67,6 +67,7 @@
         border-radius: 20px;
         color: $white;
         background-color: $primary-text-color;
+        border: 1px solid transparent;
         font-size: 18px;
         line-height: 23px;
         padding: 5px 30px;
@@ -78,6 +79,14 @@
             @include transition;
             background-color: $primary-bg-color;
           }
+        }
+      }
+      .inCart {
+        background-color: transparent;
+        border-color: $primary-bg-color;
+        color: $primary-text-color;
+        &:hover {
+          background-color: transparent;
         }
       }
     }

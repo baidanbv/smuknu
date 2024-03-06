@@ -2,12 +2,12 @@ import bgSection from '../../assets/img/headers/front.jpg';
 
 import PagePreviewSection from '../../components/PagePreviewSection/PagePreviewSection';
 import Reviews from '../../components/Reviews/Reviews';
-import FeaturedBeauty from '../../components/FeaturedProducts/FeaturedProducts';
+import FeaturedProducts from '../../components/FeaturedProducts/FeaturedProducts';
 import BeMemberComponent from '../../components/BeMemberComponent/BeMemberComponent';
 import { ProductPageProps } from '../../interfaces/ProductPageProps';
 import { PagePreviewData } from '../../interfaces/ComponentsInterfaces';
 
-const Home = ({ addToCart }: ProductPageProps) => {
+const Home = ({ addToCart, cartsProducts, handleCart }: ProductPageProps) => {
   const data: PagePreviewData = {
     bgSection: bgSection,
     contentBlockBgColor: '#F7F0F2',
@@ -21,7 +21,7 @@ const Home = ({ addToCart }: ProductPageProps) => {
   return (
     <>
       <PagePreviewSection {...data} />
-      <FeaturedBeauty addToCart={addToCart} />
+      <FeaturedProducts addToCart={addToCart} cartsProducts={cartsProducts} handleCart={handleCart} />
       <Reviews />
       <BeMemberComponent />
     </>

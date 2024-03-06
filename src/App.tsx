@@ -23,6 +23,8 @@ const App = () => {
 
   const location = useLocation();
 
+
+
   const addToCart = (product: Product): void => {
     setCartsProducts((prev) => {
       const currentProduct = prev.find((item) => item._id === product._id);
@@ -115,16 +117,16 @@ const App = () => {
     <>
       <Routes>
         <Route path="/smuknu" element={<LayOutPage handleCart={handleCart} isEmptyCart={isEmptyCart} toggleMenu={toggleMenu} isOpenMenu={isOpenMenu} />}>
-          <Route index element={<Home addToCart={addToCart} />} />
-          <Route path="shop" element={<Shop addToCart={addToCart} />} />
+          <Route index element={<Home addToCart={addToCart} cartsProducts={cartsProducts} handleCart={handleCart} />} />
+          <Route path="shop" element={<Shop addToCart={addToCart} cartsProducts={cartsProducts} handleCart={handleCart} />} />
           <Route path="be-member" element={<BeMember />} />
           <Route path="sundhed" element={<Health />} />
-          <Route path="checkout" element={<Checkout productsInCart={cartsProducts} clearCart={clearCart} />} />
+          <Route path="checkout" element={<Checkout cartsProducts={cartsProducts} clearCart={clearCart} />} />
           <Route path="*" element={<h1>Not Found</h1>} />
         </Route>
       </Routes>
 
-      {isOpenCart && <CartPopup productsInCart={cartsProducts} closeHandler={closeHandler} amountIncrease={amountIncrease} amountDecrease={amountDecrease} removeFromCart={removeFromCart} />}
+      {isOpenCart && <CartPopup cartsProducts={cartsProducts} closeHandler={closeHandler} amountIncrease={amountIncrease} amountDecrease={amountDecrease} removeFromCart={removeFromCart} />}
     </>
   );
 };

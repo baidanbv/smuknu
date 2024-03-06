@@ -22,7 +22,7 @@ export interface PagePreviewData {
 }
 
 export interface CartPopupProps {
-  productsInCart: Product[];
+  cartsProducts: Product[];
   closeHandler: () => void;
   amountIncrease: (product: Product) => void;
   amountDecrease: (product: Product) => void;
